@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>javascript作业1</title>
+</head>
+<body>
+	<label>
+		请输入合肥今天的空气质量：<input id="t-input" type="text">
+	</label>
+	<button id="btn">确认填写</button>
+	<div>
+		您输入的值是：<span id="t-display">尚无录入</span>
+	</div>
+
+	<script type="text/javascript">
+		//添加当页面加载完成时需要执行的函数
+		function addLoadEvent(func){
+			var onload = window.onload;
+			if(typeof onload != 'function'){
+		 		window.onload = func;
+		 	}else{
+		 		window.onload = function(){
+		 			onload();
+		 			func();
+		 		}
+		 	}
+		}
+
+		//获取输入信息，并显示出来
+		function doText(){
+			//对象监测
+			if(!document.getElementById){
+				return false;
+		 	}else{
+				//获取输入的信息
+		 		var text = document.getElementById("t-input").value;
+		 		//获取显示信息的DOM元素
+				var display = document.getElementById("t-display");
+				//显示信息
+		 		display.innerHTML = text;
+		 	}
+		}
+
+		//给按钮绑定事件
+		function addClick(){
+			if(!document.getElementById){
+				return false;
+		 	}else{
+		 		//获取按钮元素
+				var btn = document.getElementById('btn');
+		 		//给按钮绑定点击事件
+		 		btn.onclick = function(){
+		 			console.log("onclick")
+	 			doText();
+	 			}
+		 	}
+		}
+
+		//当页面加载完成后执行
+		addLoadEvent(addClick);
+	</script>
+</body>
+</html>
