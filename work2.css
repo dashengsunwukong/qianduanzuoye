@@ -148,6 +148,8 @@ body{
 .sideBar .myForm div input{
 	display:inline-block;
 	margin-left:15px;
+	height:20px;
+	vertical-align: middle;
 }
 
 .sideBar .myForm div textarea{
