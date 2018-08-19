@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>菜单动画</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        h1{
+            width: 200px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        button{
+            display: block;
+            margin: 100px auto; 
+        }
+        .change{
+            width: 100%;
+        }
+        .changeH{
+            color: blue;
+        }
+        h1 div{
+            width: 0;
+            background-color: blue;
+            height: 3px;
+            transition: width 2s ease;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="J_Title">
+        前端学院
+        <div id="J_Line" class="line"></div>
+    </h1>
+    <button id="J_Btn">切换样式</button>
+    <script>
+        let btn = document.getElementById('J_Btn');
+        let title = document.getElementById('J_Title');
+        let line = document.getElementById('J_Line');
+        btn.addEventListener('click',() => {
+            if (line.classList.contains('change')) {
+                line.classList.remove('change');
+                title.classList.remove('changeH');
+            } else {
+                line.classList.add('change');
+                title.classList.add('changeH');
+            }
+            
+        })
+    </script>
+</body>
+</html>
